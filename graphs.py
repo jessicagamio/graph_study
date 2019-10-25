@@ -5,16 +5,16 @@ class Vertex(object):
 
     def add_Neighbor(self,nbr,weight):
         """Associate a wieght to a vertex/key"""
-        self.conn[nbr]=weight
+        self.connect[nbr]=weight
 
     def get_weight(self,nbr):
         """return a weight associated to a vertex/key"""
-        return self.conn[nbr]
+        return self.connect[nbr]
 
     def get_conn(self):
         """return all vertex adjacent to specific vertex/key """
 
-        return self.conn.keys()
+        return self.connect.keys()
 
     def get_id(self):
         return self.id
@@ -34,7 +34,7 @@ class Graph(object):
         """get specific vertex/key from vertlist"""
 
         if n in self.vertlist:
-            return self.verlist[n]
+            return self.vertlist[n]
         else:
             return None
 
@@ -44,16 +44,16 @@ class Graph(object):
         #verify if f or t is already a vert/key in verlist
         if f not in self.vertlist:
             self.addVertex(f)
-        if t not in self.verlist:
+        if t not in self.vertlist:
             self.addVertex(t)
 
         # make vertex t a neighor to vertex f
-        self.vertlist[f].add_Neighbor(self.verlist[t], weight)
+        self.vertlist[f].add_Neighbor(self.vertlist[t], weight)
 
 
     def __contains__(self,n):
         """Returns boolean if key exists in vertlist"""
-        return n in self.verlist
+        return n in self.vertlist
 
     def __iter__(self):
         """iterates through graph"""
