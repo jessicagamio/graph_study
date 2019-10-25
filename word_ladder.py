@@ -1,7 +1,7 @@
 from graphs import Vertex, Graph
 
 wordlist='wordlist.txt'
-file=open(wordlist,r)
+file=open(wordlist,'r')
 
 words={}
 g = Graph()
@@ -23,7 +23,7 @@ for line in file:
 for wordbucket in words.keys():
     for word1 in words[wordbucket]:
         for word2 in words[wordbucket]:
-            g.addEdge(word1,word2)
+            g.addEdge(word1,word2,0)
 
 
 
